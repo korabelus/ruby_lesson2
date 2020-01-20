@@ -1,10 +1,6 @@
-alphabet = ("a".."z").to_a
-vowels_hash = Hash.new
-index = 1
-alphabet.each do |letter|
-  if ['a','e','i','o','u'].include?(letter) 
-    vowels_hash[letter] = index
-  end
-  index += 1  
+vowels_hash = {}
+vowels_array = ['a','e','i','o','u']
+("a".."z").each.with_index(1) do |letter, index|
+  vowels_hash[letter] = index if vowels_array.include?(letter) 
 end
 vowels_hash.each {|letter, index| puts "#{letter} : #{index}"}
